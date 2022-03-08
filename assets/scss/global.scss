@@ -1,0 +1,28 @@
+@import '_reset.scss';
+@import '_val.scss';
+html {
+  font-family: 'Noto Sans TC', sans-serif, Arial, 'Microsoft Jhenghei';
+  font-size: 14px;
+  color: $black;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  overscroll-behavior-y: none;
+}
+html,
+body {
+  touch-action: manipulation;
+}
+img {
+  display: block;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
