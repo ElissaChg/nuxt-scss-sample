@@ -1,4 +1,4 @@
-# nnuxt
+# nuxt-scss-sample
 
 ## 設置
 

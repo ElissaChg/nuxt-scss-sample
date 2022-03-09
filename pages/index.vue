@@ -1,9 +1,14 @@
 <template>
-  <Tutorial />
+  <div class="re">{{ $t('test') }}</div>
 </template>
 
 <script>
 export default {
-  name: 'IndexPage',
+  name: 'HomePage',
 }
 </script>
+<style lang="scss" scoped>
+.re {
+  color: blue;
+}
+</style>

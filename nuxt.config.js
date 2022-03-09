@@ -1,3 +1,7 @@
+import path from 'path'
+import fs from 'fs'
+import tw from './locale/tw.json'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -77,10 +81,28 @@ export default {
       },
     },
   },
+  // https://nuxtjs.org/docs/configuration-glossary/configuration-server
+  server: {
+    port: 3000, // default: 3000
+    host: 'localhost', // default: localhost,
+    timing: false,
+    https: {
+      key: fs.readFileSync(
+        path.resolve(__dirname, process.env.HTTPS_KEY || 'server.key')
+      ),
+      cert: fs.readFileSync(
+        path.resolve(__dirname, process.env.HTTPS_CERT || 'server.crt')
+      ),
+    },
+  },
   // https://i18n.nuxtjs.org/setup
   i18n: {
     /* module options */
     locales: ['tw'],
     defaultLocale: 'tw',
+    vueI18n: {
+      fallbackLocale: 'tw',
+      messages: { tw },
+    },
   },
 }
