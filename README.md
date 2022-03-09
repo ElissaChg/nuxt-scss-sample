@@ -1,5 +1,5 @@
 # nuxt-scss-sample
-
+開發環境為 https 
 ## 設置
 
 ```bash
@@ -17,7 +17,22 @@ $ yarn start
 $ yarn generate
 ```
 
-## 資料夾結構
+### 製作本機 https 憑證
+
+1. 安裝 Homebrew
+2. 安裝 [mkcert](https://github.com/FiloSottile/mkcert)
+```bash
+brew install mkcert
+mkcert -install
+# 切換到要放憑證的檔案目錄，製作憑證
+mkcert localhost 
+```
+3. 新增 `.env`
+```bash
+HTTPS_KEY=../localhost-key.pem
+HTTPS_CERT=../localhost.pem
+```
+## 目錄
 
 assets 目錄包含未編譯的資產，例如 Stylus 或 Sass 文件、圖像或字體。
 [documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
